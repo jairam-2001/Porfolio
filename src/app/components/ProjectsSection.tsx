@@ -153,9 +153,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </p>
 
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
+          {project.tags.map((tag,i) => (
             <span
-              key={tag}
+              key={i}
               className="px-2 py-0.5 rounded-md text-gray-400 font-['Poppins'] border border-white/5"
               style={{ fontSize: "10px", background: "rgba(255,255,255,0.03)" }}
             >

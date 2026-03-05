@@ -1,5 +1,5 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "myportfolio",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -10,6 +10,7 @@
     "dev:api": "node server/index.cjs",
     "dev:full": "concurrently -k \"npm:dev:web\" \"npm:dev:api\"",
     "start:api": "node server/index.cjs",
+"predeploy":"npm run build",
       "deploy": "gh-pages -d dist"
   },
   "dependencies": {

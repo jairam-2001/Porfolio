@@ -10,20 +10,21 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  resolve: {
-    alias: {
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-  server: {
-    proxy: {
-      "/send-mail": {
-        target: "http://localhost:5000",
-        changeOrigin: true,
-      },
-    },
-  },
+    base: "/Porfolio/"  ,
+
+  // resolve: {
+  //   alias: {
+  //     '@': path.resolve(__dirname, './src'),
+  //   },
+  // },
+  // server: {
+  //   proxy: {
+  //     "/send-mail": {
+  //       target: "http://localhost:5000",
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],

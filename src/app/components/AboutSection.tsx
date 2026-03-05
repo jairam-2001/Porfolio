@@ -109,9 +109,9 @@ export function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-8">
               {[
-                { value: "20+", label: "Projects" },
+                { value: "10+", label: "Projects" },
                 { value: "3+", label: "Years Exp." },
-                { value: "15+", label: "Technologies" },
+                { value: "10+", label: "Technologies" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
