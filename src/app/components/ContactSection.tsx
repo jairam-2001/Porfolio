@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef,ChangeEvent,FormEvent, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { Send, CheckCircle } from "lucide-react";
 import { images } from "../../assets/images";
@@ -24,24 +24,75 @@ function FloatingCharacter() {
     </div>
   );
 }
+ type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export function ContactSection() {
+ 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState<FormData>({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
-      setForm({ name: "", email: "", message: "" });
-    }, 800);
+   const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
   };
+   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true)
+      const res = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true)
+        setForm({
+          name: "",
+          email: "",
+          message: ""
+        });
+      } else {
+       setSubmitted(false)
+
+      }
+
+    } catch (error) {
+      console.error(error);
+      setSubmitted(false);
+    }
+    finally{
+      setLoading(false)
+    }
+  };
+
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     setSubmitted(true);
+  //     setTimeout(() => setSubmitted(false), 3000);
+  //     setForm({ name: "", email: "", message: "" });
+  //   }, 800);
+  // };
 
   return (
     <section id="contact" ref={ref} className="py-24 bg-[#07070f] relative overflow-hidden">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { ArrowDown, Menu, X } from "lucide-react";
+
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -64,17 +65,19 @@ export function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#a855f7] transition-all duration-300 group-hover:w-full" />
             </motion.button>
           ))}
-          <motion.button
+          <motion.a
+          href="./public/jayaramulu_software_development_engineer_3.4Years.pdf"
+          download={true}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollTo("#contact")}
-            className="px-5 py-2 rounded-full border border-[#a855f7] text-[#a855f7] text-sm font-['Poppins'] hover:bg-[#a855f7] hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]"
+            className="px-4 py-2 flex items-center rounded-full border border-[#a855f7] text-[#a855f7] text-sm font-['Poppins'] hover:bg-[#a855f7] hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]"
           >
-            Hire Me
-          </motion.button>
+            Resume <ArrowDown className="h-4 ms-2" />
+          </motion.a>
         </div>
 
         {/* Mobile menu button */}

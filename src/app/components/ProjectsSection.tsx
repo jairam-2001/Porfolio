@@ -208,7 +208,7 @@ export function ProjectsSection() {
         </div>
 
         {/* See more button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -223,7 +223,7 @@ export function ProjectsSection() {
             My Projects
             <ArrowUpRight size={14} />
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-700/50 to-transparent" />

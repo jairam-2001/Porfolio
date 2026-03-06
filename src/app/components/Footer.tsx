@@ -102,7 +102,7 @@ export function Footer() {
           className="text-center text-gray-600 font-['Poppins']"
           style={{ fontSize: "12px" }}
         >
-          © Copyright 2024–2025  Jairam Kuruba
+          © Copyright 2026  Jairam Kuruba
         </motion.p>
       </div>
     </footer>
