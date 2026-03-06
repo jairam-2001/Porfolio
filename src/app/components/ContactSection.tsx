@@ -51,7 +51,7 @@ export function ContactSection() {
 
     try {
       setLoading(true)
-      const res = await fetch("http://localhost:5000/send-email", {
+      const res = await fetch("/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
