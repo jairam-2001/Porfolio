@@ -66,7 +66,7 @@ export function Navbar() {
             </motion.button>
           ))}
           <motion.a
-          href="/jayaramulu_software_development_engineer_3.4Years.pdf"
+          href="/public/jayaramulu_software_development_engineer_3.4Years.pdf"
           download={true}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
