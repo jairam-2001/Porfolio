@@ -11,7 +11,8 @@
     "dev:full": "concurrently -k \"npm:dev:web\" \"npm:dev:api\"",
     "start:api": "node server/index.cjs",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
