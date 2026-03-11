@@ -1,4 +1,4 @@
-import heroimage from './hero_image.png'
+import heroimage from './hero_imageD.png'
 import reactjs from './reactjs.svg'
 import typescript from './typescript.svg'
 import javascript from './javascript.svg'
